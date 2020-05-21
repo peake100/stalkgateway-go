@@ -1,0 +1,350 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "stalk_proto/forecaster.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/forecast": {
+      "post": {
+        "summary": "Returns a turnip price forecast for supplied price ticker.",
+        "operationId": "StalkForecaster_ForecastPrices",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoForecast"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoTicker"
+            }
+          }
+        ],
+        "tags": [
+          "StalkForecaster"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protoForecast": {
+      "type": "object",
+      "properties": {
+        "prices_summary": {
+          "$ref": "#/definitions/protoPricesSummary",
+          "description": "A summary of the high and low prices for the island."
+        },
+        "prices_future": {
+          "$ref": "#/definitions/protoPricesSummary",
+          "description": "As prices summary, but for the future and current price periods only."
+        },
+        "spikes": {
+          "$ref": "#/definitions/protoForecastSpikes",
+          "description": "Information about spike likelihood and potential periods."
+        },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protoPotentialPattern"
+          },
+          "description": "Detailed breakdown of each potential price pattern."
+        }
+      },
+      "title": "A forecast for prices on your island"
+    },
+    "protoForecastSpikes": {
+      "type": "object",
+      "properties": {
+        "small": {
+          "$ref": "#/definitions/protoSpikeChances",
+          "description": "The chances of a small spike happening this week."
+        },
+        "big": {
+          "$ref": "#/definitions/protoSpikeChances",
+          "description": "The chances of a big spike happening this week."
+        },
+        "any": {
+          "$ref": "#/definitions/protoSpikeChances",
+          "description": "The chances of any spike happening this week."
+        }
+      },
+      "description": "Contains the overall chances of a price spike occurring this week, as well as a\nbreakdown of likelihood for each price period, by spike type."
+    },
+    "protoPotentialPattern": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "$ref": "#/definitions/protoPricePatterns",
+          "title": "The price pattern"
+        },
+        "chance": {
+          "type": "number",
+          "format": "double",
+          "title": "THe chance this price pattern will occur"
+        },
+        "prices_summary": {
+          "$ref": "#/definitions/protoPricesSummary",
+          "title": "A summary of the high anf low prices of this pattern"
+        },
+        "prices_future": {
+          "$ref": "#/definitions/protoPricesSummary",
+          "description": "As prices summary, but for the future and current price periods only."
+        },
+        "spike": {
+          "$ref": "#/definitions/protoSpikeRange",
+          "title": "The range a spike might occur in"
+        },
+        "potential_weeks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protoPotentialWeek"
+          },
+          "description": "A list of potential price permutations this pattern might produce."
+        }
+      },
+      "description": "Describes the potential course a price pattern may take given the user's price\nticker."
+    },
+    "protoPotentialWeek": {
+      "type": "object",
+      "properties": {
+        "chance": {
+          "type": "number",
+          "format": "double",
+          "description": "The chance this price fluctuation will occur."
+        },
+        "prices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protoPricePeriod"
+          },
+          "description": "Price information for each price period. Will always have 12 items."
+        },
+        "prices_summary": {
+          "$ref": "#/definitions/protoPricesSummary",
+          "description": "A summary of the prices in this fluctuation."
+        },
+        "prices_future": {
+          "$ref": "#/definitions/protoPricesSummary",
+          "description": "As prices summary, but for the future and current price periods only."
+        },
+        "spike": {
+          "$ref": "#/definitions/protoSpikeRange",
+          "description": "A summary of whether there will be a spike and what periods it will occur on."
+        }
+      },
+      "description": "Describes a potential price fluctuation for a week of a given price pattern."
+    },
+    "protoPricePatterns": {
+      "type": "string",
+      "enum": [
+        "FLUCTUATING",
+        "BIGSPIKE",
+        "DECREASING",
+        "SMALLSPIKE",
+        "UNKNOWN"
+      ],
+      "default": "FLUCTUATING",
+      "description": "Enum of the price patterns that can occur in animal crossing."
+    },
+    "protoPricePeriod": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The minimum price that might occur during this period."
+        },
+        "max": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The maximum price that might occur during this period."
+        },
+        "is_spike": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      },
+      "description": "Price info for a single price period."
+    },
+    "protoPricesSummary": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The absolute minimum price of the parent object."
+        },
+        "max": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The potential maximum price of the parent object."
+        },
+        "guaranteed": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The maximum guaranteed price for the parent. This is the minimum highest price\nwe can say will happen with 100% certainty."
+        },
+        "min_periods": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": "The price periods during which ``min`` might occur."
+        },
+        "max_periods": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": "The price periods during which ``max`` might occur."
+        },
+        "guaranteed_periods": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": "The price periods during which ``guaranteed`` might occur."
+        }
+      },
+      "description": "Price info for a series of prices."
+    },
+    "protoSpikeChances": {
+      "type": "object",
+      "properties": {
+        "has": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Whether the parent has this type of spike."
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The price period (0-11) the spike might start on."
+        },
+        "end": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The price period (0-11) the spike might end on."
+        },
+        "chance": {
+          "type": "number",
+          "format": "double",
+          "title": "The overall chance this type of spike will occur"
+        },
+        "breakdown": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": "A period-by-period breakdown of the chances this type of spike will occur on the\ngiven price period."
+        }
+      },
+      "description": "Spike info for the overall prediction."
+    },
+    "protoSpikeRange": {
+      "type": "object",
+      "properties": {
+        "has": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Whether the parent has this type of spike."
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The price period (0-11) the spike starts on."
+        },
+        "end": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The price period (0-11) the spike ends on."
+        }
+      },
+      "description": "Spike info for weeks, weeks and patterns."
+    },
+    "protoTicker": {
+      "type": "object",
+      "properties": {
+        "purchase_price": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The purchase price of the turnips on sunday."
+        },
+        "previous_pattern": {
+          "$ref": "#/definitions/protoPricePatterns",
+          "description": "The pattern of the previous week's prices for this island."
+        },
+        "prices": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": "The known nook prices for bells. This is expected to be a 12-value array with\na price of '0' standing in for \"unknown\". If this field contains less than\n12 values, it is assumed the remaining values are 0. The server will reject a\nticker with less than 12 values"
+        },
+        "current_period": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The current price period on the target island."
+        }
+      },
+      "title": "Island price data sent when requesting a prediction"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

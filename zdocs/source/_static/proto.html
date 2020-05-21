@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Protocol Documentation</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+        margin: 1.5em 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  </head>
+
+  <body>
+
+    <h1 id="title">Protocol Documentation</h1>
+
+    <h2>Table of Contents</h2>
+
+    <div id="toc-container">
+      <ul id="toc">
+        
+          
+          <li>
+            <a href="#stalk_proto%2fforecaster.proto">stalk_proto/forecaster.proto</a>
+            <ul>
+              
+              
+              
+              
+                <li>
+                  <a href="#proto.StalkForecaster"><span class="badge">S</span>StalkForecaster</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#stalk_proto%2fmodels.proto">stalk_proto/models.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#proto.Forecast"><span class="badge">M</span>Forecast</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.ForecastSpikes"><span class="badge">M</span>ForecastSpikes</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.PotentialPattern"><span class="badge">M</span>PotentialPattern</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.PotentialWeek"><span class="badge">M</span>PotentialWeek</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.PricePeriod"><span class="badge">M</span>PricePeriod</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.PricesSummary"><span class="badge">M</span>PricesSummary</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.ReqForecastChart"><span class="badge">M</span>ReqForecastChart</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.RespChart"><span class="badge">M</span>RespChart</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.SpikeChances"><span class="badge">M</span>SpikeChances</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.SpikeRange"><span class="badge">M</span>SpikeRange</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.Ticker"><span class="badge">M</span>Ticker</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#proto.ImageFormat"><span class="badge">E</span>ImageFormat</a>
+                </li>
+              
+                <li>
+                  <a href="#proto.PricePatterns"><span class="badge">E</span>PricePatterns</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+        <li><a href="#scalar-value-types">Scalar Value Types</a></li>
+      </ul>
+    </div>
+
+    
+      
+      <div class="file-heading">
+        <h2 id="stalk_proto/forecaster.proto">stalk_proto/forecaster.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+
+      
+
+      
+
+      
+        <h3 id="proto.StalkForecaster">StalkForecaster</h3>
+        <p>The forecasting service definition.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ForecastPrices</td>
+                <td><a href="#proto.Ticker">Ticker</a></td>
+                <td><a href="#proto.Forecast">Forecast</a></td>
+                <td><p>Returns a turnip price forecast for supplied price ticker.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+          
+          
+          <h4>Methods with HTTP bindings</h4>
+          <table>
+            <thead>
+              <tr>
+                <td>Method Name</td>
+                <td>Method</td>
+                <td>Pattern</td>
+                <td>Body</td>
+              </tr>
+            </thead>
+            <tbody>
+            
+              
+              
+              <tr>
+                <td>ForecastPrices</td>
+                <td>POST</td>
+                <td>/api/forecast</td>
+                <td>*</td>
+              </tr>
+              
+            
+            </tbody>
+          </table>
+          
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="stalk_proto/models.proto">stalk_proto/models.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="proto.Forecast">Forecast</h3>
+        <p>A forecast for prices on your island</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>prices_summary</td>
+                  <td><a href="#proto.PricesSummary">PricesSummary</a></td>
+                  <td></td>
+                  <td><p>A summary of the high and low prices for the island. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices_future</td>
+                  <td><a href="#proto.PricesSummary">PricesSummary</a></td>
+                  <td></td>
+                  <td><p>As prices summary, but for the future and current price periods only. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>spikes</td>
+                  <td><a href="#proto.ForecastSpikes">ForecastSpikes</a></td>
+                  <td></td>
+                  <td><p>Information about spike likelihood and potential periods. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>patterns</td>
+                  <td><a href="#proto.PotentialPattern">PotentialPattern</a></td>
+                  <td>repeated</td>
+                  <td><p>Detailed breakdown of each potential price pattern. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.ForecastSpikes">ForecastSpikes</h3>
+        <p>Contains the overall chances of a price spike occurring this week, as well as a</p><p>breakdown of likelihood for each price period, by spike type.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>small</td>
+                  <td><a href="#proto.SpikeChances">SpikeChances</a></td>
+                  <td></td>
+                  <td><p>The chances of a small spike happening this week. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>big</td>
+                  <td><a href="#proto.SpikeChances">SpikeChances</a></td>
+                  <td></td>
+                  <td><p>The chances of a big spike happening this week. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>any</td>
+                  <td><a href="#proto.SpikeChances">SpikeChances</a></td>
+                  <td></td>
+                  <td><p>The chances of any spike happening this week. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.PotentialPattern">PotentialPattern</h3>
+        <p>Describes the potential course a price pattern may take given the user's price</p><p>ticker.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>pattern</td>
+                  <td><a href="#proto.PricePatterns">PricePatterns</a></td>
+                  <td></td>
+                  <td><p>The price pattern </p></td>
+                </tr>
+              
+                <tr>
+                  <td>chance</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>THe chance this price pattern will occur </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices_summary</td>
+                  <td><a href="#proto.PricesSummary">PricesSummary</a></td>
+                  <td></td>
+                  <td><p>A summary of the high anf low prices of this pattern </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices_future</td>
+                  <td><a href="#proto.PricesSummary">PricesSummary</a></td>
+                  <td></td>
+                  <td><p>As prices summary, but for the future and current price periods only. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>spike</td>
+                  <td><a href="#proto.SpikeRange">SpikeRange</a></td>
+                  <td></td>
+                  <td><p>The range a spike might occur in </p></td>
+                </tr>
+              
+                <tr>
+                  <td>potential_weeks</td>
+                  <td><a href="#proto.PotentialWeek">PotentialWeek</a></td>
+                  <td>repeated</td>
+                  <td><p>A list of potential price permutations this pattern might produce. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.PotentialWeek">PotentialWeek</h3>
+        <p>Describes a potential price fluctuation for a week of a given price pattern.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>chance</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>The chance this price fluctuation will occur. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices</td>
+                  <td><a href="#proto.PricePeriod">PricePeriod</a></td>
+                  <td>repeated</td>
+                  <td><p>Price information for each price period. Will always have 12 items. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices_summary</td>
+                  <td><a href="#proto.PricesSummary">PricesSummary</a></td>
+                  <td></td>
+                  <td><p>A summary of the prices in this fluctuation. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices_future</td>
+                  <td><a href="#proto.PricesSummary">PricesSummary</a></td>
+                  <td></td>
+                  <td><p>As prices summary, but for the future and current price periods only. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>spike</td>
+                  <td><a href="#proto.SpikeRange">SpikeRange</a></td>
+                  <td></td>
+                  <td><p>A summary of whether there will be a spike and what periods it will occur on. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.PricePeriod">PricePeriod</h3>
+        <p>Price info for a single price period.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>min</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The minimum price that might occur during this period. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The maximum price that might occur during this period. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_spike</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.PricesSummary">PricesSummary</h3>
+        <p>Price info for a series of prices.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>min</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The absolute minimum price of the parent object. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The potential maximum price of the parent object. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>guaranteed</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The maximum guaranteed price for the parent. This is the minimum highest price
+we can say will happen with 100% certainty. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>min_periods</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>The price periods during which ``min`` might occur. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_periods</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>The price periods during which ``max`` might occur. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>guaranteed_periods</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>The price periods during which ``guaranteed`` might occur. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.ReqForecastChart">ReqForecastChart</h3>
+        <p>Request message for creating a turnip forecast chart.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ticker</td>
+                  <td><a href="#proto.Ticker">Ticker</a></td>
+                  <td></td>
+                  <td><p>Price ticker of the current prices on the island. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>forecast</td>
+                  <td><a href="#proto.Forecast">Forecast</a></td>
+                  <td></td>
+                  <td><p>The forecast for future prices on the the island. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>format</td>
+                  <td><a href="#proto.ImageFormat">ImageFormat</a></td>
+                  <td></td>
+                  <td><p>desired image format </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.RespChart">RespChart</h3>
+        <p>Response message with a rendered svg chart.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>chart</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>Binary image bytes for rendered chart. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.SpikeChances">SpikeChances</h3>
+        <p>Spike info for the overall prediction.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>has</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether the parent has this type of spike. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>start</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The price period (0-11) the spike might start on. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The price period (0-11) the spike might end on. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>chance</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>The overall chance this type of spike will occur </p></td>
+                </tr>
+              
+                <tr>
+                  <td>breakdown</td>
+                  <td><a href="#double">double</a></td>
+                  <td>repeated</td>
+                  <td><p>A period-by-period breakdown of the chances this type of spike will occur on the
+given price period. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.SpikeRange">SpikeRange</h3>
+        <p>Spike info for weeks, weeks and patterns.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>has</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether the parent has this type of spike. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>start</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The price period (0-11) the spike starts on. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The price period (0-11) the spike ends on. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="proto.Ticker">Ticker</h3>
+        <p>Island price data sent when requesting a prediction</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>purchase_price</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The purchase price of the turnips on sunday. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>previous_pattern</td>
+                  <td><a href="#proto.PricePatterns">PricePatterns</a></td>
+                  <td></td>
+                  <td><p>The pattern of the previous week&#39;s prices for this island. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prices</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>The known nook prices for bells. This is expected to be a 12-value array with
+a price of &#39;0&#39; standing in for &#34;unknown&#34;. If this field contains less than
+12 values, it is assumed the remaining values are 0. The server will reject a
+ticker with less than 12 values </p></td>
+                </tr>
+              
+                <tr>
+                  <td>current_period</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The current price period on the target island. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="proto.ImageFormat">ImageFormat</h3>
+        <p>Supported chart image formats</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>SVG</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PNG</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="proto.PricePatterns">PricePatterns</h3>
+        <p>Enum of the price patterns that can occur in animal crossing.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>FLUCTUATING</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>BIGSPIKE</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DECREASING</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SMALLSPIKE</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UNKNOWN</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+
+    <h2 id="scalar-value-types">Scalar Value Types</h2>
+    <table class="scalar-value-types-table">
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++</td><td>Java</td><td>Python</td><td>Go</td><td>C#</td><td>PHP</td><td>Ruby</td></tr>
+      </thead>
+      <tbody>
+        
+          <tr id="double">
+            <td>double</td>
+            <td></td>
+            <td>double</td>
+            <td>double</td>
+            <td>float</td>
+            <td>float64</td>
+            <td>double</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+        
+          <tr id="float">
+            <td>float</td>
+            <td></td>
+            <td>float</td>
+            <td>float</td>
+            <td>float</td>
+            <td>float32</td>
+            <td>float</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+        
+          <tr id="int32">
+            <td>int32</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="int64">
+            <td>int64</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="uint32">
+            <td>uint32</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int/long</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="uint64">
+            <td>uint64</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sint32">
+            <td>sint32</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sint64">
+            <td>sint64</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="fixed32">
+            <td>fixed32</td>
+            <td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="fixed64">
+            <td>fixed64</td>
+            <td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="sfixed32">
+            <td>sfixed32</td>
+            <td>Always four bytes.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sfixed64">
+            <td>sfixed64</td>
+            <td>Always eight bytes.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="bool">
+            <td>bool</td>
+            <td></td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>boolean</td>
+            <td>bool</td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>TrueClass/FalseClass</td>
+          </tr>
+        
+          <tr id="string">
+            <td>string</td>
+            <td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+            <td>string</td>
+            <td>String</td>
+            <td>str/unicode</td>
+            <td>string</td>
+            <td>string</td>
+            <td>string</td>
+            <td>String (UTF-8)</td>
+          </tr>
+        
+          <tr id="bytes">
+            <td>bytes</td>
+            <td>May contain any arbitrary sequence of bytes.</td>
+            <td>string</td>
+            <td>ByteString</td>
+            <td>str</td>
+            <td>[]byte</td>
+            <td>ByteString</td>
+            <td>string</td>
+            <td>String (ASCII-8BIT)</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
+

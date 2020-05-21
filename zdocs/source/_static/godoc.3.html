@@ -1,0 +1,2680 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>stalkproto - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.5";</script>
+<script src="godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6161/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6161/pkg/">GoDoc</a></div>
+<a href="godoc.3.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6161/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package stalkproto
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/peake100/stalkforecaster-go/protogen/stalk_proto"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="godoc.3.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="godoc.3.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package stalkproto is a reverse proxy.
+</p>
+<p>
+It translates gRPC into RESTful JSON APIs.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="godoc.3.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="godoc.3.html#RegisterStalkForecasterHandler">func RegisterStalkForecasterHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error</a></dd>
+			
+				
+				<dd><a href="godoc.3.html#RegisterStalkForecasterHandlerClient">func RegisterStalkForecasterHandlerClient(ctx context.Context, mux *runtime.ServeMux, client StalkForecasterClient) error</a></dd>
+			
+				
+				<dd><a href="godoc.3.html#RegisterStalkForecasterHandlerFromEndpoint">func RegisterStalkForecasterHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)</a></dd>
+			
+				
+				<dd><a href="godoc.3.html#RegisterStalkForecasterHandlerServer">func RegisterStalkForecasterHandlerServer(ctx context.Context, mux *runtime.ServeMux, server StalkForecasterServer) error</a></dd>
+			
+				
+				<dd><a href="godoc.3.html#RegisterStalkForecasterServer">func RegisterStalkForecasterServer(s *grpc.Server, srv StalkForecasterServer)</a></dd>
+			
+			
+				
+				<dd><a href="godoc.3.html#Forecast">type Forecast</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.Descriptor">func (*Forecast) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.GetPatterns">func (x *Forecast) GetPatterns() []*PotentialPattern</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.GetPricesFuture">func (x *Forecast) GetPricesFuture() *PricesSummary</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.GetPricesSummary">func (x *Forecast) GetPricesSummary() *PricesSummary</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.GetSpikes">func (x *Forecast) GetSpikes() *ForecastSpikes</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.ProtoMessage">func (*Forecast) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.ProtoReflect">func (x *Forecast) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.Reset">func (x *Forecast) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Forecast.String">func (x *Forecast) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#ForecastSpikes">type ForecastSpikes</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.Descriptor">func (*ForecastSpikes) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.GetAny">func (x *ForecastSpikes) GetAny() *SpikeChances</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.GetBig">func (x *ForecastSpikes) GetBig() *SpikeChances</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.GetSmall">func (x *ForecastSpikes) GetSmall() *SpikeChances</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.ProtoMessage">func (*ForecastSpikes) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.ProtoReflect">func (x *ForecastSpikes) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.Reset">func (x *ForecastSpikes) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ForecastSpikes.String">func (x *ForecastSpikes) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#ImageFormat">type ImageFormat</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ImageFormat.Descriptor">func (ImageFormat) Descriptor() protoreflect.EnumDescriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ImageFormat.Enum">func (x ImageFormat) Enum() *ImageFormat</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ImageFormat.EnumDescriptor">func (ImageFormat) EnumDescriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ImageFormat.Number">func (x ImageFormat) Number() protoreflect.EnumNumber</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ImageFormat.String">func (x ImageFormat) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ImageFormat.Type">func (ImageFormat) Type() protoreflect.EnumType</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#PotentialPattern">type PotentialPattern</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.Descriptor">func (*PotentialPattern) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.GetChance">func (x *PotentialPattern) GetChance() float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.GetPattern">func (x *PotentialPattern) GetPattern() PricePatterns</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.GetPotentialWeeks">func (x *PotentialPattern) GetPotentialWeeks() []*PotentialWeek</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.GetPricesFuture">func (x *PotentialPattern) GetPricesFuture() *PricesSummary</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.GetPricesSummary">func (x *PotentialPattern) GetPricesSummary() *PricesSummary</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.GetSpike">func (x *PotentialPattern) GetSpike() *SpikeRange</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.ProtoMessage">func (*PotentialPattern) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.ProtoReflect">func (x *PotentialPattern) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.Reset">func (x *PotentialPattern) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialPattern.String">func (x *PotentialPattern) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#PotentialWeek">type PotentialWeek</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.Descriptor">func (*PotentialWeek) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.GetChance">func (x *PotentialWeek) GetChance() float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.GetPrices">func (x *PotentialWeek) GetPrices() []*PricePeriod</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.GetPricesFuture">func (x *PotentialWeek) GetPricesFuture() *PricesSummary</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.GetPricesSummary">func (x *PotentialWeek) GetPricesSummary() *PricesSummary</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.GetSpike">func (x *PotentialWeek) GetSpike() *SpikeRange</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.ProtoMessage">func (*PotentialWeek) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.ProtoReflect">func (x *PotentialWeek) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.Reset">func (x *PotentialWeek) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PotentialWeek.String">func (x *PotentialWeek) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#PricePatterns">type PricePatterns</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePatterns.Descriptor">func (PricePatterns) Descriptor() protoreflect.EnumDescriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePatterns.Enum">func (x PricePatterns) Enum() *PricePatterns</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePatterns.EnumDescriptor">func (PricePatterns) EnumDescriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePatterns.Number">func (x PricePatterns) Number() protoreflect.EnumNumber</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePatterns.String">func (x PricePatterns) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePatterns.Type">func (PricePatterns) Type() protoreflect.EnumType</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#PricePeriod">type PricePeriod</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.Descriptor">func (*PricePeriod) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.GetIsSpike">func (x *PricePeriod) GetIsSpike() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.GetMax">func (x *PricePeriod) GetMax() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.GetMin">func (x *PricePeriod) GetMin() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.ProtoMessage">func (*PricePeriod) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.ProtoReflect">func (x *PricePeriod) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.Reset">func (x *PricePeriod) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricePeriod.String">func (x *PricePeriod) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#PricesSummary">type PricesSummary</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.Descriptor">func (*PricesSummary) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.GetGuaranteed">func (x *PricesSummary) GetGuaranteed() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.GetGuaranteedPeriods">func (x *PricesSummary) GetGuaranteedPeriods() []int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.GetMax">func (x *PricesSummary) GetMax() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.GetMaxPeriods">func (x *PricesSummary) GetMaxPeriods() []int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.GetMin">func (x *PricesSummary) GetMin() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.GetMinPeriods">func (x *PricesSummary) GetMinPeriods() []int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.ProtoMessage">func (*PricesSummary) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.ProtoReflect">func (x *PricesSummary) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.Reset">func (x *PricesSummary) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#PricesSummary.String">func (x *PricesSummary) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#ReqForecastChart">type ReqForecastChart</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.Descriptor">func (*ReqForecastChart) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.GetForecast">func (x *ReqForecastChart) GetForecast() *Forecast</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.GetFormat">func (x *ReqForecastChart) GetFormat() ImageFormat</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.GetTicker">func (x *ReqForecastChart) GetTicker() *Ticker</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.ProtoMessage">func (*ReqForecastChart) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.ProtoReflect">func (x *ReqForecastChart) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.Reset">func (x *ReqForecastChart) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#ReqForecastChart.String">func (x *ReqForecastChart) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#RespChart">type RespChart</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#RespChart.Descriptor">func (*RespChart) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#RespChart.GetChart">func (x *RespChart) GetChart() []byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#RespChart.ProtoMessage">func (*RespChart) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#RespChart.ProtoReflect">func (x *RespChart) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#RespChart.Reset">func (x *RespChart) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#RespChart.String">func (x *RespChart) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#SpikeChances">type SpikeChances</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.Descriptor">func (*SpikeChances) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.GetBreakdown">func (x *SpikeChances) GetBreakdown() []float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.GetChance">func (x *SpikeChances) GetChance() float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.GetEnd">func (x *SpikeChances) GetEnd() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.GetHas">func (x *SpikeChances) GetHas() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.GetStart">func (x *SpikeChances) GetStart() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.ProtoMessage">func (*SpikeChances) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.ProtoReflect">func (x *SpikeChances) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.Reset">func (x *SpikeChances) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeChances.String">func (x *SpikeChances) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#SpikeRange">type SpikeRange</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.Descriptor">func (*SpikeRange) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.GetEnd">func (x *SpikeRange) GetEnd() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.GetHas">func (x *SpikeRange) GetHas() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.GetStart">func (x *SpikeRange) GetStart() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.ProtoMessage">func (*SpikeRange) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.ProtoReflect">func (x *SpikeRange) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.Reset">func (x *SpikeRange) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#SpikeRange.String">func (x *SpikeRange) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#StalkForecasterClient">type StalkForecasterClient</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#NewStalkForecasterClient">func NewStalkForecasterClient(cc grpc.ClientConnInterface) StalkForecasterClient</a></dd>
+				
+				
+			
+				
+				<dd><a href="godoc.3.html#StalkForecasterServer">type StalkForecasterServer</a></dd>
+				
+				
+			
+				
+				<dd><a href="godoc.3.html#Ticker">type Ticker</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.Descriptor">func (*Ticker) Descriptor() ([]byte, []int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.GetCurrentPeriod">func (x *Ticker) GetCurrentPeriod() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.GetPreviousPattern">func (x *Ticker) GetPreviousPattern() PricePatterns</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.GetPrices">func (x *Ticker) GetPrices() []int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.GetPurchasePrice">func (x *Ticker) GetPurchasePrice() int32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.ProtoMessage">func (*Ticker) ProtoMessage()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.ProtoReflect">func (x *Ticker) ProtoReflect() protoreflect.Message</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.Reset">func (x *Ticker) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#Ticker.String">func (x *Ticker) String() string</a></dd>
+				
+			
+				
+				<dd><a href="godoc.3.html#UnimplementedStalkForecasterServer">type UnimplementedStalkForecasterServer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.3.html#UnimplementedStalkForecasterServer.ForecastPrices">func (*UnimplementedStalkForecasterServer) ForecastPrices(context.Context, *Ticker) (*Forecast, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go">forecaster.pb.go</a>
+			
+				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.gw.go">forecaster.pb.gw.go</a>
+			
+				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go">models.pb.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>
+Enum value maps for PricePatterns.
+</p>
+
+				<pre>var (
+    <span id="PricePatterns_name">PricePatterns_name</span> = map[<a href="http://localhost:6161/pkg/builtin/#int32">int32</a>]<a href="http://localhost:6161/pkg/builtin/#string">string</a>{
+        0: &#34;FLUCTUATING&#34;,
+        1: &#34;BIGSPIKE&#34;,
+        2: &#34;DECREASING&#34;,
+        3: &#34;SMALLSPIKE&#34;,
+        4: &#34;UNKNOWN&#34;,
+    }
+    <span id="PricePatterns_value">PricePatterns_value</span> = map[<a href="http://localhost:6161/pkg/builtin/#string">string</a>]<a href="http://localhost:6161/pkg/builtin/#int32">int32</a>{
+        &#34;FLUCTUATING&#34;: 0,
+        &#34;BIGSPIKE&#34;:    1,
+        &#34;DECREASING&#34;:  2,
+        &#34;SMALLSPIKE&#34;:  3,
+        &#34;UNKNOWN&#34;:     4,
+    }
+)</pre>
+			
+				<p>
+Enum value maps for ImageFormat.
+</p>
+
+				<pre>var (
+    <span id="ImageFormat_name">ImageFormat_name</span> = map[<a href="http://localhost:6161/pkg/builtin/#int32">int32</a>]<a href="http://localhost:6161/pkg/builtin/#string">string</a>{
+        0: &#34;SVG&#34;,
+        1: &#34;PNG&#34;,
+    }
+    <span id="ImageFormat_value">ImageFormat_value</span> = map[<a href="http://localhost:6161/pkg/builtin/#string">string</a>]<a href="http://localhost:6161/pkg/builtin/#int32">int32</a>{
+        &#34;SVG&#34;: 0,
+        &#34;PNG&#34;: 1,
+    }
+)</pre>
+			
+				
+				<pre>var <span id="File_stalk_proto_forecaster_proto">File_stalk_proto_forecaster_proto</span> <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+				
+				<pre>var <span id="File_stalk_proto_models_proto">File_stalk_proto_models_proto</span> <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#FileDescriptor">FileDescriptor</a></pre>
+			
+		
+		
+			
+			
+			<h2 id="RegisterStalkForecasterHandler">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.gw.go?s=4352:4460#L113">RegisterStalkForecasterHandler</a>
+				<a class="permalink" href="godoc.3.html#RegisterStalkForecasterHandler">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RegisterStalkForecasterHandler(ctx <a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, mux *<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/">runtime</a>.<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/#ServeMux">ServeMux</a>, conn *<a href="http://localhost:6161/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6161/pkg/google.golang.org/grpc/#ClientConn">ClientConn</a>) <a href="http://localhost:6161/pkg/builtin/#error">error</a></pre>
+			<p>
+RegisterStalkForecasterHandler registers the http handlers for service StalkForecaster to &#34;mux&#34;.
+The handlers forward requests to the grpc endpoint over &#34;conn&#34;.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RegisterStalkForecasterHandlerClient">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.gw.go?s=5057:5178#L122">RegisterStalkForecasterHandlerClient</a>
+				<a class="permalink" href="godoc.3.html#RegisterStalkForecasterHandlerClient">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RegisterStalkForecasterHandlerClient(ctx <a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, mux *<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/">runtime</a>.<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/#ServeMux">ServeMux</a>, client <a href="godoc.3.html#StalkForecasterClient">StalkForecasterClient</a>) <a href="http://localhost:6161/pkg/builtin/#error">error</a></pre>
+			<p>
+RegisterStalkForecasterHandlerClient registers the http handlers for service StalkForecaster
+to &#34;mux&#34;. The handlers forward requests to the grpc endpoint over the given implementation of &#34;StalkForecasterClient&#34;.
+Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in &#34;StalkForecasterClient&#34;
+doesn&#39;t go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
+&#34;StalkForecasterClient&#34; to call the correct interceptors.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RegisterStalkForecasterHandlerFromEndpoint">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.gw.go?s=3584:3728#L88">RegisterStalkForecasterHandlerFromEndpoint</a>
+				<a class="permalink" href="godoc.3.html#RegisterStalkForecasterHandlerFromEndpoint">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RegisterStalkForecasterHandlerFromEndpoint(ctx <a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, mux *<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/">runtime</a>.<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/#ServeMux">ServeMux</a>, endpoint <a href="http://localhost:6161/pkg/builtin/#string">string</a>, opts []<a href="http://localhost:6161/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6161/pkg/google.golang.org/grpc/#DialOption">DialOption</a>) (err <a href="http://localhost:6161/pkg/builtin/#error">error</a>)</pre>
+			<p>
+RegisterStalkForecasterHandlerFromEndpoint is same as RegisterStalkForecasterHandler but
+automatically dials to &#34;endpoint&#34; and closes the connection when &#34;ctx&#34; gets done.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RegisterStalkForecasterHandlerServer">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.gw.go?s=2433:2554#L61">RegisterStalkForecasterHandlerServer</a>
+				<a class="permalink" href="godoc.3.html#RegisterStalkForecasterHandlerServer">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RegisterStalkForecasterHandlerServer(ctx <a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, mux *<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/">runtime</a>.<a href="http://localhost:6161/pkg/github.com/grpc-ecosystem/grpc-gateway/runtime/#ServeMux">ServeMux</a>, server <a href="godoc.3.html#StalkForecasterServer">StalkForecasterServer</a>) <a href="http://localhost:6161/pkg/builtin/#error">error</a></pre>
+			<p>
+RegisterStalkForecasterHandlerServer registers the http handlers for service StalkForecaster to &#34;mux&#34;.
+UnaryRPC     :call StalkForecasterServer directly.
+StreamingRPC :currently unsupported pending <a href="https://github.com/grpc/grpc-go/issues/906">https://github.com/grpc/grpc-go/issues/906</a>.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RegisterStalkForecasterServer">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go?s=5894:5971#L130">RegisterStalkForecasterServer</a>
+				<a class="permalink" href="godoc.3.html#RegisterStalkForecasterServer">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RegisterStalkForecasterServer(s *<a href="http://localhost:6161/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6161/pkg/google.golang.org/grpc/#Server">Server</a>, srv <a href="godoc.3.html#StalkForecasterServer">StalkForecasterServer</a>)</pre>
+			
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Forecast">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20942:21784#L763">Forecast</a>
+				<a class="permalink" href="godoc.3.html#Forecast">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+A forecast for prices on your island
+</p>
+
+			<pre>type Forecast struct {
+
+    <span class="comment">// A summary of the high and low prices for the island.</span>
+<span id="Forecast.PricesSummary"></span>    PricesSummary *<a href="godoc.3.html#PricesSummary">PricesSummary</a> `protobuf:&#34;bytes,1,opt,name=prices_summary,json=pricesSummary,proto3&#34; json:&#34;prices_summary,omitempty&#34;`
+    <span class="comment">// As prices summary, but for the future and current price periods only.</span>
+<span id="Forecast.PricesFuture"></span>    PricesFuture *<a href="godoc.3.html#PricesSummary">PricesSummary</a> `protobuf:&#34;bytes,4,opt,name=prices_future,json=pricesFuture,proto3&#34; json:&#34;prices_future,omitempty&#34;`
+    <span class="comment">// Information about spike likelihood and potential periods.</span>
+<span id="Forecast.Spikes"></span>    Spikes *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a> `protobuf:&#34;bytes,2,opt,name=spikes,proto3&#34; json:&#34;spikes,omitempty&#34;`
+    <span class="comment">// Detailed breakdown of each potential price pattern.</span>
+<span id="Forecast.Patterns"></span>    Patterns []*<a href="godoc.3.html#PotentialPattern">PotentialPattern</a> `protobuf:&#34;bytes,3,rep,name=patterns,proto3&#34; json:&#34;patterns,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Forecast.Descriptor">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22492:22537#L806">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#Forecast.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#Forecast">Forecast</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use Forecast.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Forecast.GetPatterns">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22929:22981#L831">GetPatterns</a>
+					<a class="permalink" href="godoc.3.html#Forecast.GetPatterns">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) GetPatterns() []*<a href="godoc.3.html#PotentialPattern">PotentialPattern</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.GetPricesFuture">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22718:22769#L817">GetPricesFuture</a>
+					<a class="permalink" href="godoc.3.html#Forecast.GetPricesFuture">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) GetPricesFuture() *<a href="godoc.3.html#PricesSummary">PricesSummary</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.GetPricesSummary">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22605:22657#L810">GetPricesSummary</a>
+					<a class="permalink" href="godoc.3.html#Forecast.GetPricesSummary">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) GetPricesSummary() *<a href="godoc.3.html#PricesSummary">PricesSummary</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.GetSpikes">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22829:22875#L824">GetSpikes</a>
+					<a class="permalink" href="godoc.3.html#Forecast.GetSpikes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) GetSpikes() *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.ProtoMessage">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22081:22112#L791">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#Forecast.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#Forecast">Forecast</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.ProtoReflect">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22117:22171#L793">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#Forecast.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.Reset">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=21786:21812#L778">Reset</a>
+					<a class="permalink" href="godoc.3.html#Forecast.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Forecast.String">func (*Forecast) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=22002:22036#L787">String</a>
+					<a class="permalink" href="godoc.3.html#Forecast.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Forecast">Forecast</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ForecastSpikes">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=19193:19741#L696">ForecastSpikes</a>
+				<a class="permalink" href="godoc.3.html#ForecastSpikes">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Contains the overall chances of a price spike occurring this week, as well as a
+breakdown of likelihood for each price period, by spike type.
+</p>
+
+			<pre>type ForecastSpikes struct {
+
+    <span class="comment">// The chances of a small spike happening this week.</span>
+<span id="ForecastSpikes.Small"></span>    Small *<a href="godoc.3.html#SpikeChances">SpikeChances</a> `protobuf:&#34;bytes,1,opt,name=small,proto3&#34; json:&#34;small,omitempty&#34;`
+    <span class="comment">// The chances of a big spike happening this week.</span>
+<span id="ForecastSpikes.Big"></span>    Big *<a href="godoc.3.html#SpikeChances">SpikeChances</a> `protobuf:&#34;bytes,2,opt,name=big,proto3&#34; json:&#34;big,omitempty&#34;`
+    <span class="comment">// The chances of any spike happening this week.</span>
+<span id="ForecastSpikes.Any"></span>    Any *<a href="godoc.3.html#SpikeChances">SpikeChances</a> `protobuf:&#34;bytes,3,opt,name=any,proto3&#34; json:&#34;any,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ForecastSpikes.Descriptor">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20485:20536#L737">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use ForecastSpikes.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.GetAny">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20804:20851#L755">GetAny</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.GetAny">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) GetAny() *<a href="godoc.3.html#SpikeChances">SpikeChances</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.GetBig">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20706:20753#L748">GetBig</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.GetBig">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) GetBig() *<a href="godoc.3.html#SpikeChances">SpikeChances</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.GetSmall">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20604:20653#L741">GetSmall</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.GetSmall">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) GetSmall() *<a href="godoc.3.html#SpikeChances">SpikeChances</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.ProtoMessage">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20056:20093#L722">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.ProtoReflect">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=20098:20158#L724">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.Reset">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=19743:19775#L709">Reset</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ForecastSpikes.String">func (*ForecastSpikes) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=19971:20011#L718">String</a>
+					<a class="permalink" href="godoc.3.html#ForecastSpikes.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ForecastSpikes">ForecastSpikes</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ImageFormat">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2198:2220#L75">ImageFormat</a>
+				<a class="permalink" href="godoc.3.html#ImageFormat">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Supported chart image formats
+</p>
+
+			<pre>type ImageFormat <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="ImageFormat_SVG">ImageFormat_SVG</span> <a href="godoc.3.html#ImageFormat">ImageFormat</a> = 0
+    <span id="ImageFormat_PNG">ImageFormat_PNG</span> <a href="godoc.3.html#ImageFormat">ImageFormat</a> = 1
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ImageFormat.Descriptor">func (ImageFormat) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2681:2740#L104">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#ImageFormat.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="godoc.3.html#ImageFormat">ImageFormat</a>) Descriptor() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumDescriptor">EnumDescriptor</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ImageFormat.Enum">func (ImageFormat) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2475:2515#L94">Enum</a>
+					<a class="permalink" href="godoc.3.html#ImageFormat.Enum">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="godoc.3.html#ImageFormat">ImageFormat</a>) Enum() *<a href="godoc.3.html#ImageFormat">ImageFormat</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ImageFormat.EnumDescriptor">func (ImageFormat) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=3060:3111#L117">EnumDescriptor</a>
+					<a class="permalink" href="godoc.3.html#ImageFormat.EnumDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="godoc.3.html#ImageFormat">ImageFormat</a>) EnumDescriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use ImageFormat.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ImageFormat.Number">func (ImageFormat) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2915:2968#L112">Number</a>
+					<a class="permalink" href="godoc.3.html#ImageFormat.Number">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="godoc.3.html#ImageFormat">ImageFormat</a>) Number() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumNumber">EnumNumber</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ImageFormat.String">func (ImageFormat) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2562:2598#L100">String</a>
+					<a class="permalink" href="godoc.3.html#ImageFormat.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="godoc.3.html#ImageFormat">ImageFormat</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ImageFormat.Type">func (ImageFormat) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2810:2857#L108">Type</a>
+					<a class="permalink" href="godoc.3.html#ImageFormat.Type">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="godoc.3.html#ImageFormat">ImageFormat</a>) Type() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumType">EnumType</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PotentialPattern">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=14104:15246#L515">PotentialPattern</a>
+				<a class="permalink" href="godoc.3.html#PotentialPattern">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Describes the potential course a price pattern may take given the user&#39;s price
+ticker.
+</p>
+
+			<pre>type PotentialPattern struct {
+
+    <span class="comment">// The price pattern</span>
+<span id="PotentialPattern.Pattern"></span>    Pattern <a href="godoc.3.html#PricePatterns">PricePatterns</a> `protobuf:&#34;varint,1,opt,name=pattern,proto3,enum=proto.PricePatterns&#34; json:&#34;pattern,omitempty&#34;`
+    <span class="comment">// THe chance this price pattern will occur</span>
+<span id="PotentialPattern.Chance"></span>    Chance <a href="http://localhost:6161/pkg/builtin/#float64">float64</a> `protobuf:&#34;fixed64,2,opt,name=chance,proto3&#34; json:&#34;chance,omitempty&#34;`
+    <span class="comment">// A summary of the high anf low prices of this pattern</span>
+<span id="PotentialPattern.PricesSummary"></span>    PricesSummary *<a href="godoc.3.html#PricesSummary">PricesSummary</a> `protobuf:&#34;bytes,3,opt,name=prices_summary,json=pricesSummary,proto3&#34; json:&#34;prices_summary,omitempty&#34;`
+    <span class="comment">// As prices summary, but for the future and current price periods only.</span>
+<span id="PotentialPattern.PricesFuture"></span>    PricesFuture *<a href="godoc.3.html#PricesSummary">PricesSummary</a> `protobuf:&#34;bytes,6,opt,name=prices_future,json=pricesFuture,proto3&#34; json:&#34;prices_future,omitempty&#34;`
+    <span class="comment">// The range a spike might occur in</span>
+<span id="PotentialPattern.Spike"></span>    Spike *<a href="godoc.3.html#SpikeRange">SpikeRange</a> `protobuf:&#34;bytes,4,opt,name=spike,proto3&#34; json:&#34;spike,omitempty&#34;`
+    <span class="comment">// A list of potential price permutations this pattern might produce.</span>
+<span id="PotentialPattern.PotentialWeeks"></span>    PotentialWeeks []*<a href="godoc.3.html#PotentialWeek">PotentialWeek</a> `protobuf:&#34;bytes,5,rep,name=potential_weeks,json=potentialWeeks,proto3&#34; json:&#34;potential_weeks,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PotentialPattern.Descriptor">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16002:16055#L562">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use PotentialPattern.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.GetChance">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16253:16299#L573">GetChance</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.GetChance">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) GetChance() <a href="http://localhost:6161/pkg/builtin/#float64">float64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.GetPattern">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16123:16176#L566">GetPattern</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.GetPattern">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) GetPattern() <a href="godoc.3.html#PricePatterns">PricePatterns</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.GetPotentialWeeks">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16693:16756#L601">GetPotentialWeeks</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.GetPotentialWeeks">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) GetPotentialWeeks() []*<a href="godoc.3.html#PotentialWeek">PotentialWeek</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.GetPricesFuture">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16472:16531#L587">GetPricesFuture</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.GetPricesFuture">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) GetPricesFuture() *<a href="godoc.3.html#PricesSummary">PricesSummary</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.GetPricesSummary">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16351:16411#L580">GetPricesSummary</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.GetPricesSummary">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) GetPricesSummary() *<a href="godoc.3.html#PricesSummary">PricesSummary</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.GetSpike">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16591:16640#L594">GetSpike</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.GetSpike">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) GetSpike() *<a href="godoc.3.html#SpikeRange">SpikeRange</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.ProtoMessage">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=15567:15606#L547">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.ProtoReflect">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=15611:15673#L549">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.Reset">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=15248:15282#L534">Reset</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialPattern.String">func (*PotentialPattern) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=15480:15522#L543">String</a>
+					<a class="permalink" href="godoc.3.html#PotentialPattern.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialPattern">PotentialPattern</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PotentialWeek">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=11630:12623#L429">PotentialWeek</a>
+				<a class="permalink" href="godoc.3.html#PotentialWeek">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Describes a potential price fluctuation for a week of a given price pattern.
+</p>
+
+			<pre>type PotentialWeek struct {
+
+    <span class="comment">// The chance this price fluctuation will occur.</span>
+<span id="PotentialWeek.Chance"></span>    Chance <a href="http://localhost:6161/pkg/builtin/#float64">float64</a> `protobuf:&#34;fixed64,1,opt,name=chance,proto3&#34; json:&#34;chance,omitempty&#34;`
+    <span class="comment">// Price information for each price period. Will always have 12 items.</span>
+<span id="PotentialWeek.Prices"></span>    Prices []*<a href="godoc.3.html#PricePeriod">PricePeriod</a> `protobuf:&#34;bytes,3,rep,name=prices,proto3&#34; json:&#34;prices,omitempty&#34;`
+    <span class="comment">// A summary of the prices in this fluctuation.</span>
+<span id="PotentialWeek.PricesSummary"></span>    PricesSummary *<a href="godoc.3.html#PricesSummary">PricesSummary</a> `protobuf:&#34;bytes,4,opt,name=prices_summary,json=pricesSummary,proto3&#34; json:&#34;prices_summary,omitempty&#34;`
+    <span class="comment">// As prices summary, but for the future and current price periods only.</span>
+<span id="PotentialWeek.PricesFuture"></span>    PricesFuture *<a href="godoc.3.html#PricesSummary">PricesSummary</a> `protobuf:&#34;bytes,6,opt,name=prices_future,json=pricesFuture,proto3&#34; json:&#34;prices_future,omitempty&#34;`
+    <span class="comment">// A summary of whether there will be a spike and what periods it will occur on.</span>
+<span id="PotentialWeek.Spike"></span>    Spike *<a href="godoc.3.html#SpikeRange">SpikeRange</a> `protobuf:&#34;bytes,5,opt,name=spike,proto3&#34; json:&#34;spike,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PotentialWeek.Descriptor">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=13361:13411#L474">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use PotentialWeek.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.GetChance">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=13479:13522#L478">GetChance</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.GetChance">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) GetChance() <a href="http://localhost:6161/pkg/builtin/#float64">float64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.GetPrices">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=13574:13624#L485">GetPrices</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.GetPrices">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) GetPrices() []*<a href="godoc.3.html#PricePeriod">PricePeriod</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.GetPricesFuture">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=13796:13852#L499">GetPricesFuture</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.GetPricesFuture">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) GetPricesFuture() *<a href="godoc.3.html#PricesSummary">PricesSummary</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.GetPricesSummary">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=13678:13735#L492">GetPricesSummary</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.GetPricesSummary">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) GetPricesSummary() *<a href="godoc.3.html#PricesSummary">PricesSummary</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.GetSpike">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=13912:13958#L506">GetSpike</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.GetSpike">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) GetSpike() *<a href="godoc.3.html#SpikeRange">SpikeRange</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.ProtoMessage">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=12935:12971#L459">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.ProtoReflect">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=12976:13035#L461">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.Reset">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=12625:12656#L446">Reset</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PotentialWeek.String">func (*PotentialWeek) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=12851:12890#L455">String</a>
+					<a class="permalink" href="godoc.3.html#PotentialWeek.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PotentialWeek">PotentialWeek</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PricePatterns">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=856:880#L19">PricePatterns</a>
+				<a class="permalink" href="godoc.3.html#PricePatterns">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Enum of the price patterns that can occur in animal crossing.
+</p>
+
+			<pre>type PricePatterns <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="PricePatterns_FLUCTUATING">PricePatterns_FLUCTUATING</span> <a href="godoc.3.html#PricePatterns">PricePatterns</a> = 0
+    <span id="PricePatterns_BIGSPIKE">PricePatterns_BIGSPIKE</span>    <a href="godoc.3.html#PricePatterns">PricePatterns</a> = 1
+    <span id="PricePatterns_DECREASING">PricePatterns_DECREASING</span>  <a href="godoc.3.html#PricePatterns">PricePatterns</a> = 2
+    <span id="PricePatterns_SMALLSPIKE">PricePatterns_SMALLSPIKE</span>  <a href="godoc.3.html#PricePatterns">PricePatterns</a> = 3
+    <span id="PricePatterns_UNKNOWN">PricePatterns_UNKNOWN</span>     <a href="godoc.3.html#PricePatterns">PricePatterns</a> = 4
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PricePatterns.Descriptor">func (PricePatterns) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=1657:1718#L57">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#PricePatterns.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="godoc.3.html#PricePatterns">PricePatterns</a>) Descriptor() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumDescriptor">EnumDescriptor</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePatterns.Enum">func (PricePatterns) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=1443:1487#L47">Enum</a>
+					<a class="permalink" href="godoc.3.html#PricePatterns.Enum">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="godoc.3.html#PricePatterns">PricePatterns</a>) Enum() *<a href="godoc.3.html#PricePatterns">PricePatterns</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePatterns.EnumDescriptor">func (PricePatterns) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=2044:2097#L70">EnumDescriptor</a>
+					<a class="permalink" href="godoc.3.html#PricePatterns.EnumDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="godoc.3.html#PricePatterns">PricePatterns</a>) EnumDescriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use PricePatterns.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PricePatterns.Number">func (PricePatterns) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=1895:1950#L65">Number</a>
+					<a class="permalink" href="godoc.3.html#PricePatterns.Number">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="godoc.3.html#PricePatterns">PricePatterns</a>) Number() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumNumber">EnumNumber</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePatterns.String">func (PricePatterns) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=1536:1574#L53">String</a>
+					<a class="permalink" href="godoc.3.html#PricePatterns.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x <a href="godoc.3.html#PricePatterns">PricePatterns</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePatterns.Type">func (PricePatterns) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=1788:1837#L61">Type</a>
+					<a class="permalink" href="godoc.3.html#PricePatterns.Type">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (<a href="godoc.3.html#PricePatterns">PricePatterns</a>) Type() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#EnumType">EnumType</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PricePeriod">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=5593:6104#L201">PricePeriod</a>
+				<a class="permalink" href="godoc.3.html#PricePeriod">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Price info for a single price period.
+</p>
+
+			<pre>type PricePeriod struct {
+
+    <span class="comment">// The minimum price that might occur during this period.</span>
+<span id="PricePeriod.Min"></span>    Min <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,1,opt,name=min,proto3&#34; json:&#34;min,omitempty&#34;`
+    <span class="comment">// The maximum price that might occur during this period.</span>
+<span id="PricePeriod.Max"></span>    Max     <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,2,opt,name=max,proto3&#34; json:&#34;max,omitempty&#34;`
+<span id="PricePeriod.IsSpike"></span>    IsSpike <a href="http://localhost:6161/pkg/builtin/#bool">bool</a>  `protobuf:&#34;varint,3,opt,name=is_spike,json=isSpike,proto3&#34; json:&#34;is_spike,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PricePeriod.Descriptor">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=6830:6878#L241">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PricePeriod">PricePeriod</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use PricePeriod.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.GetIsSpike">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=7116:7155#L259">GetIsSpike</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.GetIsSpike">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricePeriod">PricePeriod</a>) GetIsSpike() <a href="http://localhost:6161/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.GetMax">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=7031:7067#L252">GetMax</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.GetMax">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricePeriod">PricePeriod</a>) GetMax() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.GetMin">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=6946:6982#L245">GetMin</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.GetMin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricePeriod">PricePeriod</a>) GetMin() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.ProtoMessage">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=6410:6444#L226">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PricePeriod">PricePeriod</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.ProtoReflect">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=6449:6506#L228">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricePeriod">PricePeriod</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.Reset">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=6106:6135#L213">Reset</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricePeriod">PricePeriod</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricePeriod.String">func (*PricePeriod) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=6328:6365#L222">String</a>
+					<a class="permalink" href="godoc.3.html#PricePeriod.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricePeriod">PricePeriod</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PricesSummary">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=7250:8442#L267">PricesSummary</a>
+				<a class="permalink" href="godoc.3.html#PricesSummary">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Price info for a series of prices.
+</p>
+
+			<pre>type PricesSummary struct {
+
+    <span class="comment">// The absolute minimum price of the parent object.</span>
+<span id="PricesSummary.Min"></span>    Min <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,1,opt,name=min,proto3&#34; json:&#34;min,omitempty&#34;`
+    <span class="comment">// The potential maximum price of the parent object.</span>
+<span id="PricesSummary.Max"></span>    Max <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,2,opt,name=max,proto3&#34; json:&#34;max,omitempty&#34;`
+    <span class="comment">// The maximum guaranteed price for the parent. This is the minimum highest price</span>
+    <span class="comment">// we can say will happen with 100% certainty.</span>
+<span id="PricesSummary.Guaranteed"></span>    Guaranteed <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,6,opt,name=guaranteed,proto3&#34; json:&#34;guaranteed,omitempty&#34;`
+    <span class="comment">// The price periods during which ``min`` might occur.</span>
+<span id="PricesSummary.MinPeriods"></span>    MinPeriods []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,3,rep,packed,name=min_periods,json=minPeriods,proto3&#34; json:&#34;min_periods,omitempty&#34;`
+    <span class="comment">// The price periods during which ``max`` might occur.</span>
+<span id="PricesSummary.MaxPeriods"></span>    MaxPeriods []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,4,rep,packed,name=max_periods,json=maxPeriods,proto3&#34; json:&#34;max_periods,omitempty&#34;`
+    <span class="comment">// The price periods during which ``guaranteed`` might occur.</span>
+<span id="PricesSummary.GuaranteedPeriods"></span>    GuaranteedPeriods []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,5,rep,packed,name=guaranteed_periods,json=guaranteedPeriods,proto3&#34; json:&#34;guaranteed_periods,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PricesSummary.Descriptor">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9180:9230#L315">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PricesSummary">PricesSummary</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use PricesSummary.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.GetGuaranteed">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9472:9517#L333">GetGuaranteed</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.GetGuaranteed">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) GetGuaranteed() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.GetGuaranteedPeriods">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9783:9837#L354">GetGuaranteedPeriods</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.GetGuaranteedPeriods">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) GetGuaranteedPeriods() []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.GetMax">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9385:9423#L326">GetMax</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.GetMax">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) GetMax() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.GetMaxPeriods">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9678:9725#L347">GetMaxPeriods</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.GetMaxPeriods">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) GetMaxPeriods() []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.GetMin">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9298:9336#L319">GetMin</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.GetMin">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) GetMin() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.GetMinPeriods">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9573:9620#L340">GetMinPeriods</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.GetMinPeriods">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) GetMinPeriods() []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.ProtoMessage">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=8754:8790#L300">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#PricesSummary">PricesSummary</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.ProtoReflect">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=8795:8854#L302">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.Reset">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=8444:8475#L287">Reset</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PricesSummary.String">func (*PricesSummary) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=8670:8709#L296">String</a>
+					<a class="permalink" href="godoc.3.html#PricesSummary.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#PricesSummary">PricesSummary</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ReqForecastChart">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=23094:23660#L839">ReqForecastChart</a>
+				<a class="permalink" href="godoc.3.html#ReqForecastChart">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Request message for creating a turnip forecast chart.
+</p>
+
+			<pre>type ReqForecastChart struct {
+
+    <span class="comment">// Price ticker of the current prices on the island.</span>
+<span id="ReqForecastChart.Ticker"></span>    Ticker *<a href="godoc.3.html#Ticker">Ticker</a> `protobuf:&#34;bytes,1,opt,name=ticker,proto3&#34; json:&#34;ticker,omitempty&#34;`
+    <span class="comment">// The forecast for future prices on the the island.</span>
+<span id="ReqForecastChart.Forecast"></span>    Forecast *<a href="godoc.3.html#Forecast">Forecast</a> `protobuf:&#34;bytes,2,opt,name=forecast,proto3&#34; json:&#34;forecast,omitempty&#34;`
+    <span class="comment">// desired image format</span>
+<span id="ReqForecastChart.Format"></span>    Format <a href="godoc.3.html#ImageFormat">ImageFormat</a> `protobuf:&#34;varint,3,opt,name=format,proto3,enum=proto.ImageFormat&#34; json:&#34;format,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ReqForecastChart.Descriptor">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=24416:24469#L880">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use ReqForecastChart.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.GetForecast">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=24637:24687#L891">GetForecast</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.GetForecast">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) GetForecast() *<a href="godoc.3.html#Forecast">Forecast</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.GetFormat">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=24743:24793#L898">GetFormat</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.GetFormat">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) GetFormat() <a href="godoc.3.html#ImageFormat">ImageFormat</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.GetTicker">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=24537:24583#L884">GetTicker</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.GetTicker">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) GetTicker() *<a href="godoc.3.html#Ticker">Ticker</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.ProtoMessage">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=23981:24020#L865">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.ProtoReflect">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=24025:24087#L867">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.Reset">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=23662:23696#L852">Reset</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ReqForecastChart.String">func (*ReqForecastChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=23894:23936#L861">String</a>
+					<a class="permalink" href="godoc.3.html#ReqForecastChart.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#ReqForecastChart">ReqForecastChart</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="RespChart">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=24906:25167#L906">RespChart</a>
+				<a class="permalink" href="godoc.3.html#RespChart">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Response message with a rendered svg chart.
+</p>
+
+			<pre>type RespChart struct {
+
+    <span class="comment">// Binary image bytes for rendered chart.</span>
+<span id="RespChart.Chart"></span>    Chart []<a href="http://localhost:6161/pkg/builtin/#byte">byte</a> `protobuf:&#34;bytes,1,opt,name=chart,proto3&#34; json:&#34;chart,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="RespChart.Descriptor">func (*RespChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=25883:25929#L943">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#RespChart.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#RespChart">RespChart</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use RespChart.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="RespChart.GetChart">func (*RespChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=25998:26035#L947">GetChart</a>
+					<a class="permalink" href="godoc.3.html#RespChart.GetChart">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#RespChart">RespChart</a>) GetChart() []<a href="http://localhost:6161/pkg/builtin/#byte">byte</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="RespChart.ProtoMessage">func (*RespChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=25468:25500#L928">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#RespChart.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#RespChart">RespChart</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="RespChart.ProtoReflect">func (*RespChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=25505:25560#L930">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#RespChart.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#RespChart">RespChart</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="RespChart.Reset">func (*RespChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=25169:25196#L915">Reset</a>
+					<a class="permalink" href="godoc.3.html#RespChart.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#RespChart">RespChart</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="RespChart.String">func (*RespChart) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=25388:25423#L924">String</a>
+					<a class="permalink" href="godoc.3.html#RespChart.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#RespChart">RespChart</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SpikeChances">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=16860:17733#L609">SpikeChances</a>
+				<a class="permalink" href="godoc.3.html#SpikeChances">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Spike info for the overall prediction.
+</p>
+
+			<pre>type SpikeChances struct {
+
+    <span class="comment">// Whether the parent has this type of spike.</span>
+<span id="SpikeChances.Has"></span>    Has <a href="http://localhost:6161/pkg/builtin/#bool">bool</a> `protobuf:&#34;varint,1,opt,name=has,proto3&#34; json:&#34;has,omitempty&#34;`
+    <span class="comment">// The price period (0-11) the spike might start on.</span>
+<span id="SpikeChances.Start"></span>    Start <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,2,opt,name=start,proto3&#34; json:&#34;start,omitempty&#34;`
+    <span class="comment">// The price period (0-11) the spike might end on.</span>
+<span id="SpikeChances.End"></span>    End <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,3,opt,name=end,proto3&#34; json:&#34;end,omitempty&#34;`
+    <span class="comment">// The overall chance this type of spike will occur</span>
+<span id="SpikeChances.Chance"></span>    Chance <a href="http://localhost:6161/pkg/builtin/#float64">float64</a> `protobuf:&#34;fixed64,4,opt,name=chance,proto3&#34; json:&#34;chance,omitempty&#34;`
+    <span class="comment">// A period-by-period breakdown of the chances this type of spike will occur on the</span>
+    <span class="comment">// given price period.</span>
+<span id="SpikeChances.Breakdown"></span>    Breakdown []<a href="http://localhost:6161/pkg/builtin/#float64">float64</a> `protobuf:&#34;fixed64,5,rep,packed,name=breakdown,proto3&#34; json:&#34;breakdown,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SpikeChances.Descriptor">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18465:18514#L655">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#SpikeChances">SpikeChances</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use SpikeChances.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.GetBreakdown">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18941:18988#L687">GetBreakdown</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.GetBreakdown">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) GetBreakdown() []<a href="http://localhost:6161/pkg/builtin/#float64">float64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.GetChance">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18847:18889#L680">GetChance</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.GetChance">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) GetChance() <a href="http://localhost:6161/pkg/builtin/#float64">float64</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.GetEnd">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18761:18798#L673">GetEnd</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.GetEnd">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) GetEnd() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.GetHas">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18582:18618#L659">GetHas</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.GetHas">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) GetHas() <a href="http://localhost:6161/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.GetStart">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18671:18710#L666">GetStart</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.GetStart">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) GetStart() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.ProtoMessage">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18042:18077#L640">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#SpikeChances">SpikeChances</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.ProtoReflect">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=18082:18140#L642">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.Reset">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=17735:17765#L627">Reset</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeChances.String">func (*SpikeChances) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=17959:17997#L636">String</a>
+					<a class="permalink" href="godoc.3.html#SpikeChances.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeChances">SpikeChances</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SpikeRange">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=9947:10456#L362">SpikeRange</a>
+				<a class="permalink" href="godoc.3.html#SpikeRange">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Spike info for weeks, weeks and patterns.
+</p>
+
+			<pre>type SpikeRange struct {
+
+    <span class="comment">// Whether the parent has this type of spike.</span>
+<span id="SpikeRange.Has"></span>    Has <a href="http://localhost:6161/pkg/builtin/#bool">bool</a> `protobuf:&#34;varint,1,opt,name=has,proto3&#34; json:&#34;has,omitempty&#34;`
+    <span class="comment">// The price period (0-11) the spike starts on.</span>
+<span id="SpikeRange.Start"></span>    Start <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,2,opt,name=start,proto3&#34; json:&#34;start,omitempty&#34;`
+    <span class="comment">// The price period (0-11) the spike ends on.</span>
+<span id="SpikeRange.End"></span>    End <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,3,opt,name=end,proto3&#34; json:&#34;end,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SpikeRange.Descriptor">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=11176:11223#L403">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#SpikeRange">SpikeRange</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use SpikeRange.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.GetEnd">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=11466:11501#L421">GetEnd</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.GetEnd">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeRange">SpikeRange</a>) GetEnd() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.GetHas">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=11291:11325#L407">GetHas</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.GetHas">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeRange">SpikeRange</a>) GetHas() <a href="http://localhost:6161/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.GetStart">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=11378:11415#L414">GetStart</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.GetStart">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeRange">SpikeRange</a>) GetStart() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.ProtoMessage">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=10759:10792#L388">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#SpikeRange">SpikeRange</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.ProtoReflect">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=10797:10853#L390">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeRange">SpikeRange</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.Reset">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=10458:10486#L375">Reset</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeRange">SpikeRange</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpikeRange.String">func (*SpikeRange) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=10678:10714#L384">String</a>
+					<a class="permalink" href="godoc.3.html#SpikeRange.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#SpikeRange">SpikeRange</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="StalkForecasterClient">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go?s=4632:4828#L94">StalkForecasterClient</a>
+				<a class="permalink" href="godoc.3.html#StalkForecasterClient">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+StalkForecasterClient is the client API for StalkForecaster service.
+</p>
+<p>
+For semantics around ctx use and closing/ending streaming RPCs, please refer to <a href="https://godoc.org/google.golang.org/grpc#ClientConn.NewStream">https://godoc.org/google.golang.org/grpc#ClientConn.NewStream</a>.
+</p>
+
+			<pre>type StalkForecasterClient interface {
+    <span class="comment">// Returns a turnip price forecast for supplied price ticker.</span>
+    ForecastPrices(ctx <a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, in *<a href="godoc.3.html#Ticker">Ticker</a>, opts ...<a href="http://localhost:6161/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6161/pkg/google.golang.org/grpc/#CallOption">CallOption</a>) (*<a href="godoc.3.html#Forecast">Forecast</a>, <a href="http://localhost:6161/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewStalkForecasterClient">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go?s=4898:4978#L103">NewStalkForecasterClient</a>
+					<a class="permalink" href="godoc.3.html#NewStalkForecasterClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewStalkForecasterClient(cc <a href="http://localhost:6161/pkg/google.golang.org/grpc/">grpc</a>.<a href="http://localhost:6161/pkg/google.golang.org/grpc/#ClientConnInterface">ClientConnInterface</a>) <a href="godoc.3.html#StalkForecasterClient">StalkForecasterClient</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="StalkForecasterServer">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go?s=5381:5545#L117">StalkForecasterServer</a>
+				<a class="permalink" href="godoc.3.html#StalkForecasterServer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+StalkForecasterServer is the server API for StalkForecaster service.
+</p>
+
+			<pre>type StalkForecasterServer interface {
+    <span class="comment">// Returns a turnip price forecast for supplied price ticker.</span>
+    ForecastPrices(<a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, *<a href="godoc.3.html#Ticker">Ticker</a>) (*<a href="godoc.3.html#Forecast">Forecast</a>, <a href="http://localhost:6161/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Ticker">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=3234:4319#L122">Ticker</a>
+				<a class="permalink" href="godoc.3.html#Ticker">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Island price data sent when requesting a prediction
+</p>
+
+			<pre>type Ticker struct {
+
+    <span class="comment">// The purchase price of the turnips on sunday.</span>
+<span id="Ticker.PurchasePrice"></span>    PurchasePrice <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,1,opt,name=purchase_price,json=purchasePrice,proto3&#34; json:&#34;purchase_price,omitempty&#34;`
+    <span class="comment">// The pattern of the previous week&#39;s prices for this island.</span>
+<span id="Ticker.PreviousPattern"></span>    PreviousPattern <a href="godoc.3.html#PricePatterns">PricePatterns</a> `protobuf:&#34;varint,2,opt,name=previous_pattern,json=previousPattern,proto3,enum=proto.PricePatterns&#34; json:&#34;previous_pattern,omitempty&#34;`
+    <span class="comment">// The known nook prices for bells. This is expected to be a 12-value array with</span>
+    <span class="comment">// a price of &#39;0&#39; standing in for &#34;unknown&#34;. If this field contains less than</span>
+    <span class="comment">// 12 values, it is assumed the remaining values are 0. The server will reject a</span>
+    <span class="comment">// ticker with less than 12 values</span>
+<span id="Ticker.Prices"></span>    Prices []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,3,rep,packed,name=prices,proto3&#34; json:&#34;prices,omitempty&#34;`
+    <span class="comment">// The current price period on the target island.</span>
+<span id="Ticker.CurrentPeriod"></span>    CurrentPeriod <a href="http://localhost:6161/pkg/builtin/#int32">int32</a> `protobuf:&#34;varint,4,opt,name=current_period,json=currentPeriod,proto3&#34; json:&#34;current_period,omitempty&#34;`
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Ticker.Descriptor">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=5015:5058#L168">Descriptor</a>
+					<a class="permalink" href="godoc.3.html#Ticker.Descriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#Ticker">Ticker</a>) Descriptor() ([]<a href="http://localhost:6161/pkg/builtin/#byte">byte</a>, []<a href="http://localhost:6161/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Deprecated: Use Ticker.ProtoReflect.Descriptor instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Ticker.GetCurrentPeriod">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=5452:5493#L193">GetCurrentPeriod</a>
+					<a class="permalink" href="godoc.3.html#Ticker.GetCurrentPeriod">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) GetCurrentPeriod() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.GetPreviousPattern">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=5226:5277#L179">GetPreviousPattern</a>
+					<a class="permalink" href="godoc.3.html#Ticker.GetPreviousPattern">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) GetPreviousPattern() <a href="godoc.3.html#PricePatterns">PricePatterns</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.GetPrices">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=5362:5398#L186">GetPrices</a>
+					<a class="permalink" href="godoc.3.html#Ticker.GetPrices">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) GetPrices() []<a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.GetPurchasePrice">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=5126:5167#L172">GetPurchasePrice</a>
+					<a class="permalink" href="godoc.3.html#Ticker.GetPurchasePrice">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) GetPurchasePrice() <a href="http://localhost:6161/pkg/builtin/#int32">int32</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.ProtoMessage">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=4610:4639#L153">ProtoMessage</a>
+					<a class="permalink" href="godoc.3.html#Ticker.ProtoMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#Ticker">Ticker</a>) ProtoMessage()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.ProtoReflect">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=4644:4696#L155">ProtoReflect</a>
+					<a class="permalink" href="godoc.3.html#Ticker.ProtoReflect">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) ProtoReflect() <a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/">protoreflect</a>.<a href="http://localhost:6161/pkg/google.golang.org/protobuf/reflect/protoreflect/#Message">Message</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.Reset">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=4321:4345#L140">Reset</a>
+					<a class="permalink" href="godoc.3.html#Ticker.Reset">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) Reset()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Ticker.String">func (*Ticker) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/models.pb.go?s=4533:4565#L149">String</a>
+					<a class="permalink" href="godoc.3.html#Ticker.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (x *<a href="godoc.3.html#Ticker">Ticker</a>) String() <a href="http://localhost:6161/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="UnimplementedStalkForecasterServer">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go?s=5645:5695#L123">UnimplementedStalkForecasterServer</a>
+				<a class="permalink" href="godoc.3.html#UnimplementedStalkForecasterServer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+UnimplementedStalkForecasterServer can be embedded to have forward compatible implementations.
+</p>
+
+			<pre>type UnimplementedStalkForecasterServer struct {
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UnimplementedStalkForecasterServer.ForecastPrices">func (*UnimplementedStalkForecasterServer) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/protogen/stalk_proto/forecaster.pb.go?s=5697:5799#L126">ForecastPrices</a>
+					<a class="permalink" href="godoc.3.html#UnimplementedStalkForecasterServer.ForecastPrices">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (*<a href="godoc.3.html#UnimplementedStalkForecasterServer">UnimplementedStalkForecasterServer</a>) ForecastPrices(<a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, *<a href="godoc.3.html#Ticker">Ticker</a>) (*<a href="godoc.3.html#Forecast">Forecast</a>, <a href="http://localhost:6161/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.5.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6161/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6161/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
