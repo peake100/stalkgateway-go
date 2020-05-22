@@ -121,18 +121,16 @@ func (monitor *Monitor) monitorServers() {
 
 func NewServiceMonitor() *Monitor {
 	monitor := &Monitor{
-		osExitSignal: make(chan os.Signal),
-		// The master shutdown signal is sent and received from the same select block,
-		// so it needs a buffer
-		shutDownMaster: make(chan interface{}, 2),
-		shutdownRest:   make(chan interface{}, 1),
-
-		restErrList: make([]error, 0),
-
-		restErrs: make(chan error, 1),
-
+		osExitSignal:         make(chan os.Signal),
+		shutDownMaster:       make(chan interface{}, 2),
+		shutdownRest:          make(chan interface{}, 1),
 		restShutdownComplete: make(chan interface{}, 1),
+		restErrs:             make(chan error, 1),
 		shutdownComplete:     new(sync.WaitGroup),
+		shutdownCtx:          nil,
+		restErrList:          make([]error, 0),
+		shutdownInProgress:   false,
+		restDone:             false,
 	}
 
 	signal.Notify(monitor.osExitSignal, os.Interrupt, syscall.SIGTERM)

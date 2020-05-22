@@ -10,17 +10,16 @@ WORKDIR /workspace
 # Copy all the source files
 COPY . .
 # Build the GO program
-RUN CGO_ENABLED=0 GOOS=linux go build -a -o stalkforecaster
+RUN CGO_ENABLED=0 GOOS=linux go build -a -o service
 
 FROM alpine AS final
 
 WORKDIR /
 # Copy the compiled binary from builder
-COPY --from=builder /workspace/stalkforecaster .
+COPY --from=builder /workspace/service .
 
 # Execute the program upon start
-CMD [ "./stalkforecaster" ]
+CMD [ "./service" ]
 
 # Expose http & gRPC ports
 EXPOSE 80
-EXPOSE 50051
