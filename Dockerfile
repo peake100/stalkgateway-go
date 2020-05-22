@@ -10,16 +10,16 @@ WORKDIR /workspace
 # Copy all the source files
 COPY . .
 # Build the GO program
-RUN CGO_ENABLED=0 GOOS=linux go build -a -o service
+RUN CGO_ENABLED=0 GOOS=linux go build -a -o service-binary
 
 FROM alpine AS final
 
 WORKDIR /
 # Copy the compiled binary from builder
-COPY --from=builder /workspace/service .
+COPY --from=builder /workspace/service-binary .
 
 # Execute the program upon start
-CMD [ "./service" ]
+CMD [ "./service-binary" ]
 
 # Expose http & gRPC ports
 EXPOSE 80
