@@ -11,6 +11,38 @@
     "application/json"
   ],
   "paths": {
+    "/api/charts/forecast": {
+      "post": {
+        "operationId": "StalkReporter_ForecastChart",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoRespChart"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoReqForecastChart"
+            }
+          }
+        ],
+        "tags": [
+          "StalkReporter"
+        ]
+      }
+    },
     "/api/forecast": {
       "post": {
         "summary": "Returns a turnip price forecast for supplied price ticker.",
@@ -88,6 +120,15 @@
         }
       },
       "description": "Contains the overall chances of a price spike occurring this week, as well as a\nbreakdown of likelihood for each price period, by spike type."
+    },
+    "protoImageFormat": {
+      "type": "string",
+      "enum": [
+        "SVG",
+        "PNG"
+      ],
+      "default": "SVG",
+      "title": "Supported chart image formats"
     },
     "protoPotentialPattern": {
       "type": "object",
@@ -229,6 +270,35 @@
         }
       },
       "description": "Price info for a series of prices."
+    },
+    "protoReqForecastChart": {
+      "type": "object",
+      "properties": {
+        "ticker": {
+          "$ref": "#/definitions/protoTicker",
+          "description": "Price ticker of the current prices on the island."
+        },
+        "forecast": {
+          "$ref": "#/definitions/protoForecast",
+          "description": "The forecast for future prices on the the island."
+        },
+        "format": {
+          "$ref": "#/definitions/protoImageFormat",
+          "title": "desired image format"
+        }
+      },
+      "description": "Request message for creating a turnip forecast chart."
+    },
+    "protoRespChart": {
+      "type": "object",
+      "properties": {
+        "chart": {
+          "type": "string",
+          "format": "byte",
+          "description": "Binary image bytes for rendered chart."
+        }
+      },
+      "description": "Response message with a rendered svg chart."
     },
     "protoSpikeChances": {
       "type": "object",

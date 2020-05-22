@@ -1,13 +1,55 @@
 import configparser
 import pathlib
+import subprocess
 
-config_path = pathlib.Path(__file__).parent.parent.parent / "setup.cfg"
+
+root_dir = pathlib.Path(__file__).parent.parent.parent
+config_path = root_dir / "setup.cfg"
 config = configparser.ConfigParser()
 config.read(str(config_path))
+
 
 __version__ = config.get("version", "release")
 if not __version__:
     __version__ = config.get("version", "target")
+
+
+# gerate the protoc html docs
+proc = subprocess.Popen(
+    [
+        "protoc",
+        "-I.",
+        (
+            "--swagger_out=logtostderr=true,allow_merge=true,merge_file_name=gateway:"
+            "./zdocs/source/swagger"
+        ),
+        "./stalk_proto/forecaster.proto",
+        "./stalk_proto/models.proto",
+        "./stalk_proto/reporter.proto",
+    ],
+    cwd=str(root_dir),
+)
+_, _ = proc.communicate(timeout=30)
+if proc.returncode != 0:
+    print(root_dir)
+    raise RuntimeError("error generating swagger json")
+
+# gerate redoc html
+proc = subprocess.Popen(
+    [
+        "npx",
+        "redoc-cli",
+        "bundle",
+        "-o",
+        "./zdocs/source/_static/redoc.html",
+        "./zdocs/source/swagger/gateway.swagger.json",
+    ],
+    cwd=str(root_dir),
+)
+_, _ = proc.communicate(timeout=30)
+if proc.returncode != 0:
+    print(root_dir)
+    raise RuntimeError("error generating swagger json")
 
 # -*- coding: utf-8 -*-
 #

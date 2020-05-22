@@ -70,7 +70,6 @@ doc:
 	mkdir ./zdocs/build
 	# Rip API docs from godoc. This tools spins up a godoc server and downloads
 	# module docs
-	# protoc --doc_out=./zdocs/source/_static --doc_opt=html,proto.html stalk-proto/*.proto
 	docmodule-go
 	python setup.py build_sphinx -E
 	sleep 1

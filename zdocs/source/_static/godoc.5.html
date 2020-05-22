@@ -77,7 +77,7 @@
 		
 		<div id="short-nav">
 			<dl>
-			<dd><code>import "github.com/peake100/stalkforecaster-go/service/servers"</code></dd>
+			<dd><code>import "github.com/peake100/stalkgateway-go/service/servers"</code></dd>
 			</dl>
 			<dl>
 			<dd><a href="godoc.5.html#pkg-overview" class="overviewLink">Overview</a></dd>
@@ -112,38 +112,27 @@
 			
 			
 				
-				<dd><a href="godoc.5.html#RunGrpc">func RunGrpc(monitor *ServersMonitor)</a></dd>
-			
-				
-				<dd><a href="godoc.5.html#RunRest">func RunRest(monitor *ServersMonitor)</a></dd>
+				<dd><a href="godoc.5.html#RunRest">func RunRest(monitor *Monitor)</a></dd>
 			
 			
 				
-				<dd><a href="godoc.5.html#ServersMonitor">type ServersMonitor</a></dd>
+				<dd><a href="godoc.5.html#Monitor">type Monitor</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="godoc.5.html#NewServiceMonitor">func NewServiceMonitor() *ServersMonitor</a></dd>
-				
-				
-					
-					<dd>&nbsp; &nbsp; <a href="godoc.5.html#ServersMonitor.ErrorsEncountered">func (monitor *ServersMonitor) ErrorsEncountered() bool</a></dd>
-				
-					
-					<dd>&nbsp; &nbsp; <a href="godoc.5.html#ServersMonitor.ShutdownServers">func (monitor *ServersMonitor) ShutdownServers()</a></dd>
-				
-					
-					<dd>&nbsp; &nbsp; <a href="godoc.5.html#ServersMonitor.StartServers">func (monitor *ServersMonitor) StartServers()</a></dd>
-				
-					
-					<dd>&nbsp; &nbsp; <a href="godoc.5.html#ServersMonitor.WaitOnShutdown">func (monitor *ServersMonitor) WaitOnShutdown()</a></dd>
-				
-			
-				
-				<dd><a href="godoc.5.html#StalkForecastServer">type StalkForecastServer</a></dd>
+					<dd>&nbsp; &nbsp; <a href="godoc.5.html#NewServiceMonitor">func NewServiceMonitor() *Monitor</a></dd>
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="godoc.5.html#StalkForecastServer.ForecastPrices">func (server *StalkForecastServer) ForecastPrices(ctx context.Context, ticker *stalkproto.Ticker) (*stalkproto.Forecast, error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="godoc.5.html#Monitor.ErrorsEncountered">func (monitor *Monitor) ErrorsEncountered() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.5.html#Monitor.ShutdownServers">func (monitor *Monitor) ShutdownServers()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.5.html#Monitor.StartServers">func (monitor *Monitor) StartServers()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="godoc.5.html#Monitor.WaitOnShutdown">func (monitor *Monitor) WaitOnShutdown()</a></dd>
 				
 			
 			
@@ -157,15 +146,11 @@
 			<p>
 			<span style="font-size:90%">
 			
-				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/grpc.go">grpc.go</a>
+				<a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/loadSettings.go">loadSettings.go</a>
 			
-				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/loadSettings.go">loadSettings.go</a>
+				<a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go">monitor.go</a>
 			
-				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go">monitor.go</a>
-			
-				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/rest.go">rest.go</a>
-			
-				<a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/serializers.go">serializers.go</a>
+				<a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/rest.go">rest.go</a>
 			
 			</span>
 			</p>
@@ -180,28 +165,13 @@
 		
 			
 			
-			<h2 id="RunGrpc">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/grpc.go?s=1244:1285#L42">RunGrpc</a>
-				<a class="permalink" href="godoc.5.html#RunGrpc">&#xb6;</a>
-				
-				
-			</h2>
-			<pre>func RunGrpc(
-    monitor *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a>,
-)</pre>
-			
-			
-			
-
-		
-			
-			
-			<h2 id="RunRest">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/rest.go?s=222:263#L3">RunRest</a>
+			<h2 id="RunRest">func <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/rest.go?s=219:253#L3">RunRest</a>
 				<a class="permalink" href="godoc.5.html#RunRest">&#xb6;</a>
 				
 				
 			</h2>
 			<pre>func RunRest(
-    monitor *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a>,
+    monitor *<a href="godoc.5.html#Monitor">Monitor</a>,
 )</pre>
 			
 			
@@ -211,13 +181,13 @@
 		
 			
 			
-			<h2 id="ServersMonitor">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go?s=190:1394#L6">ServersMonitor</a>
-				<a class="permalink" href="godoc.5.html#ServersMonitor">&#xb6;</a>
+			<h2 id="Monitor">type <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go?s=190:991#L6">Monitor</a>
+				<a class="permalink" href="godoc.5.html#Monitor">&#xb6;</a>
 				
 				
 			</h2>
 			
-			<pre>type ServersMonitor struct {
+			<pre>type Monitor struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }
 </pre>
@@ -232,12 +202,12 @@
 
 			
 				
-				<h3 id="NewServiceMonitor">func <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go?s=3964:4004#L133">NewServiceMonitor</a>
+				<h3 id="NewServiceMonitor">func <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go?s=3031:3064#L112">NewServiceMonitor</a>
 					<a class="permalink" href="godoc.5.html#NewServiceMonitor">&#xb6;</a>
 					
 					
 				</h3>
-				<pre>func NewServiceMonitor() *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a></pre>
+				<pre>func NewServiceMonitor() *<a href="godoc.5.html#Monitor">Monitor</a></pre>
 				
 				
 				
@@ -245,24 +215,24 @@
 
 			
 				
-				<h3 id="ServersMonitor.ErrorsEncountered">func (*ServersMonitor) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go?s=1865:1920#L63">ErrorsEncountered</a>
-					<a class="permalink" href="godoc.5.html#ServersMonitor.ErrorsEncountered">&#xb6;</a>
+				<h3 id="Monitor.ErrorsEncountered">func (*Monitor) <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go?s=1420:1468#L53">ErrorsEncountered</a>
+					<a class="permalink" href="godoc.5.html#Monitor.ErrorsEncountered">&#xb6;</a>
 					
 					
 				</h3>
-				<pre>func (monitor *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a>) ErrorsEncountered() <a href="http://localhost:6161/pkg/builtin/#bool">bool</a></pre>
+				<pre>func (monitor *<a href="godoc.5.html#Monitor">Monitor</a>) ErrorsEncountered() <a href="http://localhost:6161/pkg/builtin/#bool">bool</a></pre>
 				
 				
 				
 				
 			
 				
-				<h3 id="ServersMonitor.ShutdownServers">func (*ServersMonitor) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go?s=1655:1703#L54">ShutdownServers</a>
-					<a class="permalink" href="godoc.5.html#ServersMonitor.ShutdownServers">&#xb6;</a>
+				<h3 id="Monitor.ShutdownServers">func (*Monitor) <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go?s=1224:1265#L44">ShutdownServers</a>
+					<a class="permalink" href="godoc.5.html#Monitor.ShutdownServers">&#xb6;</a>
 					
 					
 				</h3>
-				<pre>func (monitor *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a>) ShutdownServers()</pre>
+				<pre>func (monitor *<a href="godoc.5.html#Monitor">Monitor</a>) ShutdownServers()</pre>
 				<p>
 Sends shutdown signals. Forces shutdown after 10 seconds.
 </p>
@@ -272,12 +242,12 @@ Sends shutdown signals. Forces shutdown after 10 seconds.
 				
 			
 				
-				<h3 id="ServersMonitor.StartServers">func (*ServersMonitor) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go?s=1428:1473#L46">StartServers</a>
-					<a class="permalink" href="godoc.5.html#ServersMonitor.StartServers">&#xb6;</a>
+				<h3 id="Monitor.StartServers">func (*Monitor) <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go?s=1025:1063#L37">StartServers</a>
+					<a class="permalink" href="godoc.5.html#Monitor.StartServers">&#xb6;</a>
 					
 					
 				</h3>
-				<pre>func (monitor *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a>) StartServers()</pre>
+				<pre>func (monitor *<a href="godoc.5.html#Monitor">Monitor</a>) StartServers()</pre>
 				<p>
 Start monitoring the servers
 </p>
@@ -287,53 +257,16 @@ Start monitoring the servers
 				
 			
 				
-				<h3 id="ServersMonitor.WaitOnShutdown">func (*ServersMonitor) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/monitor.go?s=1779:1826#L59">WaitOnShutdown</a>
-					<a class="permalink" href="godoc.5.html#ServersMonitor.WaitOnShutdown">&#xb6;</a>
+				<h3 id="Monitor.WaitOnShutdown">func (*Monitor) <a href="http://localhost:6161/src/github.com/peake100/stalkgateway-go/service/servers/monitor.go?s=1341:1381#L49">WaitOnShutdown</a>
+					<a class="permalink" href="godoc.5.html#Monitor.WaitOnShutdown">&#xb6;</a>
 					
 					
 				</h3>
-				<pre>func (monitor *<a href="godoc.5.html#ServersMonitor">ServersMonitor</a>) WaitOnShutdown()</pre>
+				<pre>func (monitor *<a href="godoc.5.html#Monitor">Monitor</a>) WaitOnShutdown()</pre>
 				<p>
 BLocks until servers are shut down.
 </p>
 
-				
-				
-				
-			
-		
-			
-			
-			<h2 id="StalkForecastServer">type <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/grpc.go?s=216:249#L3">StalkForecastServer</a>
-				<a class="permalink" href="godoc.5.html#StalkForecastServer">&#xb6;</a>
-				
-				
-			</h2>
-			
-			<pre>type StalkForecastServer struct{}
-</pre>
-
-			
-
-			
-
-			
-			
-			
-
-			
-
-			
-				
-				<h3 id="StalkForecastServer.ForecastPrices">func (*StalkForecastServer) <a href="http://localhost:6161/src/github.com/peake100/stalkforecaster-go/service/servers/grpc.go?s=251:382#L5">ForecastPrices</a>
-					<a class="permalink" href="godoc.5.html#StalkForecastServer.ForecastPrices">&#xb6;</a>
-					
-					
-				</h3>
-				<pre>func (server *<a href="godoc.5.html#StalkForecastServer">StalkForecastServer</a>) ForecastPrices(
-    ctx <a href="http://localhost:6161/pkg/context/">context</a>.<a href="http://localhost:6161/pkg/context/#Context">Context</a>, ticker *stalkproto.<a href="godoc.5.html#Ticker">Ticker</a>,
-) (*stalkproto.<a href="godoc.5.html#Forecast">Forecast</a>, <a href="http://localhost:6161/pkg/builtin/#error">error</a>)</pre>
-				
 				
 				
 				
